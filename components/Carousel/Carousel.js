@@ -36,7 +36,7 @@ const createCarousel = () => {
   img2.src = "./assets/carousel/computer.jpeg";
   img3.src = "./assets/carousel/trees.jpeg";
   img4.src = "./assets/carousel/turntable.jpeg";
-  
+
   carousel.appendChild(leftButton);
   carousel.appendChild(img1);
   carousel.appendChild(img2);
@@ -46,8 +46,40 @@ const createCarousel = () => {
 
   const imagesArray = [img1, img2, img3, img4];
 
-  
+  rightButton.addEventListener("click", e => {
+    let current = imagesArray[0];
+    for (let i=0; i<imagesArray.length; i++){
+      if(imagesArray[i].style.display === "block"){
+        current = imagesArray[i]
+      }
+    }
+    let index = imagesArray.indexOf(current);
+      if (imagesArray[index+1] !== undefined){
+        imagesArray[index].style.display = "none";
+        imagesArray[index+1].style.display = "block";
+      } else{
+        imagesArray[index].style.display = "none";
+        imagesArray[0].style.display = "block";
+      }
+  });
 
+  leftButton.addEventListener("click", e => {
+    let current = imagesArray[0];
+    for (let i=0; i<imagesArray.length; i++){
+      if(imagesArray[i].style.display === "block"){
+        current = imagesArray[i]
+      }
+    }
+    let index = imagesArray.indexOf(current);
+      if (imagesArray[index-1] !== undefined){
+        imagesArray[index].style.display = "none";
+        imagesArray[index-1].style.display = "block";
+      } else{
+        imagesArray[index].style.display = "none";
+        imagesArray[imagesArray.length-1].style.display = "block";
+      }
+  });
+  
   return carousel;
 }
 
