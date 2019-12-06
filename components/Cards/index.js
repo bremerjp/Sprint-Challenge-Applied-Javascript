@@ -32,7 +32,7 @@ axios
         console.log("The data was not returned", error);
     });
 
-const createCard = (article) => {
+const createCard = article => {
     const card = document.createElement('div'),
         articleHeadline = document.createElement('div'),
         articleAuthor = document.createElement('div'),
@@ -47,7 +47,7 @@ const createCard = (article) => {
 
     articleHeadline.textContent = article.headline;
     authorImage.src = article.authorPhoto;
-    authorName.textContent = article.authorName;
+    authorName.textContent = `By: ${article.authorName}`;
 
     card.appendChild(articleHeadline);
     card.appendChild(articleAuthor);

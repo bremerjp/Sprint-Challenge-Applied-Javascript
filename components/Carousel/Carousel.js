@@ -18,7 +18,7 @@
   </div>
 */
 
-function createCarousel() {
+const createCarousel = () => {
   const carousel = document.createElement('div'),
     leftButton = document.createElement('div'),
     img1 = document.createElement('img'),
@@ -44,8 +44,6 @@ function createCarousel() {
   carousel.appendChild(rightButton);
 
   const imagesArray = [img1, img2, img3, img4];
-
-  console.log(imagesArray);
 
   return carousel;
 }
