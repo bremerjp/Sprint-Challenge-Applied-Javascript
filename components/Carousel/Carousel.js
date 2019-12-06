@@ -32,6 +32,7 @@ const createCarousel = () => {
   rightButton.classList.add('right-button');
 
   img1.src = "./assets/carousel/mountains.jpeg";
+  img1.style.display = "block";
   img2.src = "./assets/carousel/computer.jpeg";
   img3.src = "./assets/carousel/trees.jpeg";
   img4.src = "./assets/carousel/turntable.jpeg";
@@ -44,6 +45,8 @@ const createCarousel = () => {
   carousel.appendChild(rightButton);
 
   const imagesArray = [img1, img2, img3, img4];
+
+  
 
   return carousel;
 }
